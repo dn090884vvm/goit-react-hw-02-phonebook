@@ -4,6 +4,9 @@ import { ContactList } from './ContactList/ContactList';
 import { nanoid } from 'nanoid';
 // import Formfunction from './Form/FormFunction';
 import { Filter } from './Filter/Filter';
+import { GlobalStyle } from './GlobalStyle';
+import { SectionWrapper } from './SectionWrapper/Sectionwrapper.styled';
+import { Header1, Header2 } from './App.styled';
 
 class App extends Component {
   state = {
@@ -67,15 +70,20 @@ class App extends Component {
 
     return (
       <>
-        <h1>Phonebook</h1>
-        <ContactForm onSubmit={this.addContact} />
-        {/* <Formfunction onSubmit={this.addContact} /> */}
-        <h2>Contacts</h2>
-        <Filter value={filter} onChange={this.changeFilter} />
-        <ContactList
-          contacts={filteredContacts}
-          onDeleteContact={this.deleteContact}
-        />
+        <GlobalStyle />
+        <SectionWrapper>
+          <Header1>Phonebook</Header1>
+          <ContactForm onSubmit={this.addContact} />
+          {/* <Formfunction onSubmit={this.addContact} /> */}
+        </SectionWrapper>
+        <SectionWrapper>
+          <Header2>Contacts</Header2>
+          <Filter value={filter} onChange={this.changeFilter} />
+          <ContactList
+            contacts={filteredContacts}
+            onDeleteContact={this.deleteContact}
+          />
+        </SectionWrapper>
       </>
     );
   }
