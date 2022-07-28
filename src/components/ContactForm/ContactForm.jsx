@@ -8,23 +8,11 @@ class ContactForm extends Component {
     number: '',
   };
 
-  //   handleChangeName = e => {
-  //     // console.log(e.currentTarget.value);
-  //     this.setState({ name: e.currentTarget.value });
-  //   };
-
-  //   handleChangeNumber = e => {
-  //     // console.log(e.currentTarget.value);
-  //     this.setState({ number: e.currentTarget.value });
-  //   };
-
   handleChange = e => {
     const { name, value } = e.target;
 
     this.setState({ [name]: value });
   };
-
-  // this.setState({ [name] : e.target.value });
 
   handleSubmit = e => {
     e.preventDefault();

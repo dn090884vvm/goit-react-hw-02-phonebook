@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ContactForm from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { nanoid } from 'nanoid';
-// import Formfunction from './Form/FormFunction';
+
 import { Filter } from './Filter/Filter';
 import { GlobalStyle } from './GlobalStyle';
 import { SectionWrapper } from './SectionWrapper/Sectionwrapper.styled';
@@ -26,7 +26,7 @@ class App extends Component {
       ),
     }));
   };
-  // addContact = ( name, number ); for Function
+
   addContact = ({ name, number }) => {
     console.log(name, number);
 
@@ -44,8 +44,6 @@ class App extends Component {
       name: name,
       number: number,
     };
-    // this.setState(prevstate => ({    rabotaet, nige 4erez destructurizaciu
-    //   contacts: [newContact, ...prevstate.contacts],
 
     this.setState(({ contacts }) => ({
       contacts: [newContact, ...contacts],
@@ -74,7 +72,6 @@ class App extends Component {
         <SectionWrapper>
           <Header1>Phonebook</Header1>
           <ContactForm onSubmit={this.addContact} />
-          {/* <Formfunction onSubmit={this.addContact} /> */}
         </SectionWrapper>
         <SectionWrapper>
           <Header2>Contacts</Header2>

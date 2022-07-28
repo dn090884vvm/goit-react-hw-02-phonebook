@@ -18,15 +18,10 @@ export default function Formfunction({ onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    // console.log(this.state);
-
-    // this.props.onSubmit(this.state);
     onSubmit(name, number);
     setName('');
     setNumber('');
-    // Array.from(document.querySelectorAll('input')).forEach(
-    //   input => (input.value = '')
-    // );
+
     e.target.reset();
   };
 
